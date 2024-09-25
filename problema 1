@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace problema_1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double valorpresente = 1000;
+            double juros = 5.3f;
+            int periodo = 6*2;
+            double valorFinal = 0F;
+            Console.WriteLine(valorpresente);
+            Console.WriteLine(juros);
+            Console.WriteLine(periodo);
+            juros = 1 + juros;
+            valorFinal = valorpresente *  Math.Pow(juros , periodo);
+            Console.WriteLine($"Valor Final: R${valorFinal:C}");
+
+
+
+        }
+    }
+}
