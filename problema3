@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace problema3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Digite o valor presente: R$ ");
+            double valorPresente = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Digite a taxa de juros (%): "); double taxaJuros = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Digite o período (anos): ");
+            int periodo = Convert.ToInt32(Console.ReadLine());
+            double taxaDecimal = taxaJuros / 100;  
+            double rendimentoTotal = valorPresente * Math.Pow(1 + taxaDecimal, periodo); 
+            Console.WriteLine($"Rendimento total: R$ {rendimentoTotal:F2}");
+            Console.ReadLine();
+        }
+    }
+}
