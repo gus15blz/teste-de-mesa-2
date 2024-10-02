@@ -1,0 +1,33 @@
+using System;
+namespace CalculadoraRendimentoComResgate
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            double valorInicial = 2000; 
+            double taxaJurosMensal = 2.0 / 100; int totalMeses = 6;
+            int mesResgate = 5;
+            double valorResgate =1000; 
+                                 
+            Console.WriteLine("Mês\tValor Acumulado\tRendimento\tSaldo após Resgate"); Console.WriteLine("---------------------------------------------------");
+            
+            for (int mes = 1; mes <= totalMeses; mes++)
+            {
+                double valorAnterior = valorInicial; valorInicial *= (1 + taxaJurosMensal);
+                double rendimento = valorInicial - valorAnterior;
+                
+                if (mes == mesResgate) 
+                {
+                    valorInicial -= valorResgate;
+                    Console.WriteLine($"{mes}\tR${valorAnterior:F2}\tR${rendimento:F2}\t\t (o valor do resgate foi de R$1.000,00) sobrou: R${valorInicial:F2}\t\t"); Console.WriteLine("\t");
+                }                else
+                {
+                    Console.WriteLine($"{mes}\tR${valorInicial:F2}\tR${rendimento:F2}-\t");
+                    Console.ReadLine();
+                }
+            }
+        }
+    }
+}
