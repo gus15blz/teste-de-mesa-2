@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace problema5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double valorInicial = 7107.36;
+            double taxaJurosAnual = 1.25; int tempoAnos = 2;
+            double valorFinal = valorInicial * Math.Pow(1 + (taxaJurosAnual / 100), tempoAnos);
+            Console.WriteLine($"Valor inicial: R${valorInicial:F2}"); 
+            Console.WriteLine($"Taxa de juros anual: {taxaJurosAnual}%"); Console.WriteLine($"Tempo: {tempoAnos} anos");
+            Console.WriteLine($"Valor final: R${valorFinal:F2}");
+            Console.ReadLine();
+        }
+    }
+}
